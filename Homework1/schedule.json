@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Силовой тренинг",
+        "time": "22.08.2024",
+        "maxPeople": 5,
+        "currentPeople": 5
+    },
+    {
+        "name": "Йога",
+        "time": "18.08.2024",
+        "maxPeople": 30,
+        "currentPeople": 29
+    },
+    {
+        "name": "Пилатес",
+        "time": "31.08.2024",
+        "maxPeople": 15,
+        "currentPeople": 1
+    },
+    {
+        "name": "Кросс-фит",
+        "time": "16.08.2024",
+        "maxPeople": 10,
+        "currentPeople": 8
+    }
+]
