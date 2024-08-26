@@ -1,0 +1,103 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__photo {
+        width: 100%;
+        max-width: 800px;
+        height: 600px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    &__data {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__author {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    &__like {
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        cursor: pointer;
+    }
+    &__like-counter {
+        font-size: 20px;
+    }
+    &__prev-button,
+    &__next-button {
+        padding: 6px 12px;
+        border-radius: 3px;
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+        line-height: 1.25;
+        background: #fc6e51;
+        text-decoration: none;
+        user-select: none;
+        color: white;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+        position: relative;
+        transition: background-color 0.6s ease;
+        overflow: hidden;
+        border: 0;
+        cursor: pointer;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            top: var(--mouse-y);
+            left: var(--mouse-x);
+            transform-style: flat;
+            transform: translate3d(-50%, -50%, 0);
+            background: rgba(white, 0.1);
+            border-radius: 100%;
+            transition:
+                width 0.3s ease,
+                height 0.3s ease;
+        }
+        &:hover {
+            background: darken(#fc6e51, 7%);
+        }
+        &:active {
+            &:after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        &.disable {
+            background: #d6d6d6;
+            box-shadow: none;
+            cursor: not-allowed;
+            &:after {
+                transform: unset;
+                background: unset;
+                border-radius: 100%;
+                transition:
+                    width 0s ease,
+                    height 0s ease;
+            }
+        }
+    }
+}
